@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Học Toán lớp 9</title>
+<style>
+:root{--bg:#fff4fa;--card:#fff;--tx:#3b2a4d;--mu:#7c6a8f;--pr:#ff7eb6;--pr2:#ffe3f1;--bl:#e4f1ff;--yl:#fff5cf;--gr:#dff7e8;--ok:#1e9e5a;--okb:#dff7e8;--no:#d6455d;--nob:#ffe3e8;--bd:#f6d3e6;--sh:0 4px 0 #f6d3e6;color-scheme:light;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#241830;--card:#33223f;--tx:#f6ebff;--mu:#c3aedb;--pr:#ff8fc2;--pr2:#4a2a49;--bl:#243a52;--yl:#4b4224;--gr:#1f4331;--ok:#6fe0a0;--okb:#1f4331;--no:#ff9aad;--nob:#4a2530;--bd:#4d3560;--sh:0 4px 0 #4d3560;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#241830;--card:#33223f;--tx:#f6ebff;--mu:#c3aedb;--pr:#ff8fc2;--pr2:#4a2a49;--bl:#243a52;--yl:#4b4224;--gr:#1f4331;--ok:#6fe0a0;--okb:#1f4331;--no:#ff9aad;--nob:#4a2530;--bd:#4d3560;--sh:0 4px 0 #4d3560;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Nunito","Quicksand","Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;padding-top:env(safe-area-inset-top,0px);padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+.w{max-width:640px;margin:0 auto;padding:14px}
+.hd{display:flex;align-items:center;gap:10px}
+.hd .m{font-size:2.4rem}
+.hd h1{font-size:1.35rem;margin:0}
+.hd p{margin:0;color:var(--mu);font-size:.9rem}
+.sp{flex:1}
+.ib{border:2px solid var(--bd);background:var(--card);border-radius:14px;padding:8px 11px;font-size:1.1rem;cursor:pointer}
+.star{background:var(--yl);border-radius:999px;padding:6px 12px;font-weight:800;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0 8px}
+.hd>div:nth-child(2){min-width:0}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:2px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:9px 14px;font:inherit;font-weight:700;cursor:pointer;box-shadow:var(--sh)}
+.chip.on{background:var(--pr);border-color:var(--pr);color:#fff}
+.card{background:var(--card);border:2px solid var(--bd);border-radius:22px;padding:16px;margin:14px 0;box-shadow:var(--sh)}
+.card h2{margin:0 0 4px;font-size:1.2rem}
+.intro{background:var(--pr2);border-radius:18px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start}
+.intro .m{font-size:2rem}
+.tag{display:inline-block;background:var(--pr);color:#fff;border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:800;margin-bottom:6px}
+.say{margin:6px 0}
+.f{background:var(--bl);border-radius:16px;padding:4px 10px;margin:8px 0;font-family:Cambria,"Times New Roman",serif;text-align:center}
+.fl{background:var(--card);border-radius:12px;padding:8px 10px;margin:8px 0;font-size:clamp(1.1rem,4.6vw,1.4rem);font-weight:700;overflow-x:auto}
+.op{color:var(--pr);margin:0 5px}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 4px;line-height:1.25}
+.fr i{font-style:normal;padding:0 5px}
+.fr i:first-child{border-bottom:2px solid currentColor}
+sub{font-size:.65em}
+.tip{background:var(--yl);border-radius:14px;padding:9px 12px;margin:8px 0;font-size:.95rem}
+.ex{background:var(--gr);border-radius:14px;padding:9px 12px;margin:8px 0;font-size:.95rem}
+.ex b{display:block;margin-bottom:2px}
+.q{margin:14px 0;padding-top:12px;border-top:2px dashed var(--bd)}
+.q:first-child{border-top:0;padding-top:0}
+.o{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;border-radius:16px;border:2px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;cursor:pointer;min-height:48px}
+.o:active{transform:scale(.98)}
+.o.ok{background:var(--okb);border-color:var(--ok)}
+.o.no{background:var(--nob);border-color:var(--no)}
+.fb{font-size:.95rem;color:var(--mu);margin-top:4px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.row label{display:flex;align-items:center;gap:4px;font-weight:800}
+input{width:76px;padding:11px;border-radius:14px;border:2px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;font-size:1rem}
+.btn{border:0;background:var(--pr);color:#fff;border-radius:16px;padding:12px 18px;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #d9568f}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #d9568f}
+.res{margin-top:12px;white-space:pre-wrap;background:var(--bl);border-radius:14px;padding:10px 12px;font-family:Cambria,"Times New Roman",serif;font-size:1.05rem}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:2px solid var(--bd);display:flex;justify-content:space-around;padding:8px 8px calc(8px + env(safe-area-inset-bottom,0px));z-index:5}
+.bar button{flex:1;max-width:200px;border:0;background:none;color:var(--mu);font:inherit;font-weight:800;font-size:.8rem;cursor:pointer;padding:4px;border-radius:14px}
+.bar button span{display:block;font-size:1.4rem}
+.bar button.on{color:var(--pr);background:var(--pr2)}
+.hide{display:none}
+.ill{background:var(--card);border:2px dashed var(--bd);border-radius:16px;margin:8px 0;padding:4px}
+.ill svg{display:block;width:100%;height:auto;max-height:200px}
+@keyframes dr{0%{stroke-dashoffset:100}35%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:100}}
+.dr{stroke-dasharray:100;stroke-dashoffset:100;animation:dr 4.5s ease-in-out infinite}
+@keyframes cy{0%{opacity:0}3%{opacity:1}22%{opacity:1}25%{opacity:0}100%{opacity:0}}
+.cy{opacity:0;animation:cy 6.4s infinite}
+@keyframes pu{50%{transform:scale(1.18)}}
+.pu{animation:pu 1.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pop{0%{opacity:0;transform:translateY(6px)}10%,85%{opacity:1;transform:none}100%{opacity:0}}
+.pp{opacity:0;animation:pop 6s infinite}
+@keyframes par{0%,22%{transform:translateY(0)}28%,47%{transform:translateY(-15px)}53%,72%{transform:translateY(-35px)}78%,100%{transform:translateY(0)}}
+.pa{animation:par 6.4s ease-in-out infinite}
+@keyframes rt{to{transform:rotate(360deg)}}
+.rt{animation:rt 4s linear infinite}
+</style>
+</head>
+<body>
+<div class="w">
+<div class="hd"><div class="m">🐰</div><div><h1>Toán 9 cùng Thỏ Bông</h1><p>Học từng bước nhỏ, dễ hiểu nè!</p></div><div class="sp"></div><div class="star">⭐ <span id="stars">0</span></div><button class="ib" id="tg" aria-label="Đổi sáng tối">🌙</button></div>
+
+<section id="learn">
+<div class="chips" id="nav"></div>
+<div id="main"></div>
+</section>
+
+<section id="tool" class="hide">
+<div class="card">
+<h2>🧮 Máy giải phương trình bậc hai</h2>
+<p class="say">Phương trình dạng <b>ax² + bx + c = 0</b>. Nhập 3 số rồi bấm giải, Thỏ sẽ chỉ từng bước.</p>
+<div class="row"><label>a<input id="a" type="number" inputmode="decimal" value="1"></label><label>b<input id="b" type="number" inputmode="decimal" value="-5"></label><label>c<input id="c" type="number" inputmode="decimal" value="6"></label></div>
+<p><button class="btn" id="go">Giải giúp mình 🐰</button></p>
+<div class="res" id="res"></div>
+</div>
+</section>
+</div>
+
+<div class="bar">
+<button class="on" id="t1"><span>📚</span>Học bài</button>
+<button id="t2"><span>🧮</span>Máy giải</button>
+</div>
+
+<script>
+const D=[
+{n:"Căn bậc hai",e:"√",hi:"Căn bậc hai là phép tìm ngược của bình phương. 3² = 9 nên √9 = 3.",
+L:[
+{t:"Căn bậc hai là gì?",say:"√a là số không âm mà khi bình phương lên thì ra a. Chỉ tìm được khi a ≥ 0 (không có căn của số âm).",f:"√a = x  ⇔  x² = a  (x ≥ 0)",tip:"Mẹo: tưởng tượng căn như cái “gỡ bình phương”. Bình phương rồi căn thì về lại số cũ.",ex:["Ví dụ","√25 = 5 vì 5² = 25","√0 = 0"]},
+{t:"Căn của bình phương",say:"√(A²) luôn ra giá trị tuyệt đối của A, tức là luôn không âm.",f:"√(A²) = |A|",tip:"Mẹo: √((−3)²) = √9 = 3, không phải −3!",ex:["Ví dụ","√((−7)²) = |−7| = 7"]},
+{t:"Đưa thừa số ra ngoài căn",say:"Tìm số chính phương (4, 9, 16, 25…) nằm trong căn rồi “cho nó ra ngoài”.",f:"√(A²B) = |A|·√B",tip:"Mẹo: tách số trong căn thành (số chính phương) × (số còn lại).",ex:["Ví dụ √50","Bước 1: 50 = 25 × 2","Bước 2: √50 = √25 · √2 = 5√2"]},
+{t:"Trục căn ở mẫu",say:"Không để căn nằm dưới mẫu. Nhân cả tử và mẫu với căn đó, hoặc với biểu thức liên hợp.",f:"1/√a = √a/a      1/(√a + √b) = (√a − √b)/(a − b)",tip:"Mẹo: liên hợp là đổi dấu ở giữa. Nhân hai cái liên hợp sẽ mất căn (hiệu hai bình phương).",ex:["Ví dụ 1/√3","Nhân cả tử và mẫu với √3: √3/3"]}],
+Q:[["√9 + √16 bằng?",["5","7","25","12"],1,"3 + 4 = 7. Đừng cộng trong căn nha!"],["√((−3)²) bằng?",["−3","3","9","±3"],1,"√(A²) = |A| nên bằng |−3| = 3."],["Rút gọn √18:",["9√2","3√2","2√3","6√3"],1,"18 = 9 × 2 nên √18 = 3√2."],["√(x − 2) có nghĩa khi:",["x > 2","x ≥ 2","x ≤ 2","x ≠ 2"],1,"Trong căn phải ≥ 0 nên x − 2 ≥ 0."]]},
+{n:"Hệ phương trình",e:"🔗",hi:"Hệ phương trình là hai phương trình đi cùng nhau, ta tìm cặp (x; y) thỏa cả hai.",
+L:[
+{t:"Hệ hai ẩn là gì?",say:"Có hai ẩn x, y và hai phương trình. Nghiệm là cặp (x; y) làm cả hai phương trình cùng đúng.",f:"a₁x + b₁y = c₁\na₂x + b₂y = c₂",tip:"Mẹo: mỗi phương trình là một đường thẳng, nghiệm chính là giao điểm của hai đường.",ex:["Ví dụ","(3; 2) là nghiệm của x + y = 5 và x − y = 1 vì 3+2=5 và 3−2=1"]},
+{t:"Cách thế",say:"Rút một ẩn từ phương trình dễ, rồi thay vào phương trình kia.",f:"y = 5 − x  ⇒  thế vào phương trình còn lại",tip:"Mẹo: chọn phương trình có ẩn hệ số 1 để rút cho nhanh.",ex:["Ví dụ x + y = 5; 2x − y = 1","Bước 1: y = 5 − x","Bước 2: 2x − (5 − x) = 1 ⇒ 3x = 6 ⇒ x = 2","Bước 3: y = 5 − 2 = 3"]},
+{t:"Cách cộng đại số",say:"Làm cho hai hệ số của một ẩn bằng nhau (hoặc đối nhau) rồi cộng/trừ hai phương trình để mất ẩn đó.",f:"(x + y) + (x − y) = 5 + 1",tip:"Mẹo: hệ số đối nhau thì cộng, bằng nhau thì trừ.",ex:["Ví dụ x + y = 5; x − y = 1","Cộng hai vế: 2x = 6 ⇒ x = 3","Thế lại: y = 2"]},
+{t:"Hệ có mấy nghiệm?",say:"Hai đường thẳng có 3 khả năng: cắt nhau, song song, hoặc trùng nhau.",f:"cắt: 1 nghiệm · song song: vô nghiệm · trùng: vô số nghiệm",tip:"Mẹo: khi khử ẩn mà ra 0 = số khác 0 thì vô nghiệm, ra 0 = 0 thì vô số nghiệm.",ex:["Ví dụ","x + y = 2 và x + y = 3: không thể cùng đúng ⇒ vô nghiệm"]}],
+Q:[["Nghiệm của x + y = 7, x − y = 3:",["(5; 2)","(4; 3)","(2; 5)","(3; 4)"],0,"Cộng hai vế: 2x = 10 ⇒ x = 5, y = 2."],["Hệ x + y = 2 và 2x + 2y = 6 có:",["1 nghiệm","Vô nghiệm","Vô số nghiệm","2 nghiệm"],1,"Chia đôi pt hai: x + y = 3, mâu thuẫn với x + y = 2."],["Nghiệm của 2x + y = 5 và x = 1:",["(1; 3)","(1; 5)","(2; 1)","(1; 2)"],0,"Thế x = 1: 2 + y = 5 ⇒ y = 3."]]},
+{n:"Phương trình bậc hai",e:"x²",hi:"Phương trình có x² là bậc hai. Chỉ cần tính Δ rồi áp công thức là xong!",
+L:[
+{t:"Dạng của phương trình",say:"Phương trình bậc hai có dạng ax² + bx + c = 0 và a phải khác 0. Việc đầu tiên là nhận ra a, b, c.",f:"ax² + bx + c = 0  (a ≠ 0)",tip:"Mẹo: lấy cả dấu của số. Ví dụ x² − 5x + 6 = 0 thì a = 1, b = −5, c = 6.",ex:["Ví dụ 2x² + 3x − 1 = 0","a = 2, b = 3, c = −1"]},
+{t:"Tính Δ (đen-ta)",say:"Δ giống “máy dò” cho biết phương trình có bao nhiêu nghiệm.",f:"Δ = b² − 4ac",tip:"Mẹo: Δ > 0 có 2 nghiệm 😄 · Δ = 0 có 1 nghiệm kép 😐 · Δ < 0 vô nghiệm 😢",ex:["Ví dụ x² − 5x + 6 = 0","Δ = (−5)² − 4·1·6 = 25 − 24 = 1 > 0"]},
+{t:"Công thức nghiệm",say:"Có Δ rồi thì thay vào công thức để ra x.",f:"x = (−b ± √Δ) / (2a)",tip:"Mẹo: dấu ± nghĩa là làm hai lần, một lần cộng, một lần trừ. Δ = 0 thì x = −b/(2a).",ex:["Tiếp tục ví dụ trên (Δ = 1)","x₁ = (5 + 1)/2 = 3","x₂ = (5 − 1)/2 = 2"]},
+{t:"Định lí Vi-ét",say:"Không cần giải cũng biết tổng và tích hai nghiệm. Rất hữu ích để kiểm tra kết quả.",f:"x₁ + x₂ = −b/a\nx₁ · x₂ = c/a",tip:"Mẹo: thử lại với ví dụ trên: 3 + 2 = 5 = −(−5)/1 và 3 · 2 = 6 = c/a. Đúng rồi!",ex:["Ví dụ 2x² − 6x + 1 = 0","Tổng hai nghiệm = −(−6)/2 = 3","Tích hai nghiệm = 1/2"]}],
+Q:[["Δ của x² − 4x + 3 = 0 là:",["4","2","−4","16"],0,"Δ = 16 − 12 = 4."],["Tổng hai nghiệm của 2x² − 6x + 1 = 0:",["3","−3","1/2","6"],0,"−b/a = 6/2 = 3."],["x² + 2x + 5 = 0 thì:",["2 nghiệm phân biệt","Nghiệm kép","Vô nghiệm","x = −1"],2,"Δ = 4 − 20 = −16 < 0."],["Tích hai nghiệm của x² − 7x + 12 = 0:",["7","−7","12","−12"],2,"c/a = 12/1 = 12."]]},
+{n:"Hệ thức lượng",e:"📐",hi:"Tam giác vuông có nhiều công thức hay giúp tính cạnh và góc rất nhanh.",
+L:[
+{t:"Pytago",say:"Trong tam giác vuông, bình phương cạnh huyền bằng tổng bình phương hai cạnh góc vuông.",f:"BC² = AB² + AC²",tip:"Mẹo: cạnh huyền là cạnh đối diện góc vuông, luôn dài nhất.",ex:["Ví dụ hai cạnh góc vuông 6 và 8","BC² = 36 + 64 = 100 ⇒ BC = 10"]},
+{t:"Đường cao ứng với cạnh huyền",say:"Kẻ đường cao AH xuống cạnh huyền BC, ta có các hệ thức sau.",f:"AB² = BH · BC      AH² = BH · CH\nAH · BC = AB · AC",tip:"Mẹo: bình phương một cạnh góc vuông = hình chiếu của nó × cạnh huyền.",ex:["Ví dụ BH = 4, CH = 9","AH² = 4 · 9 = 36 ⇒ AH = 6"]},
+{t:"Tỉ số lượng giác",say:"sin, cos, tan là tỉ số giữa các cạnh của tam giác vuông ứng với góc nhọn α.",f:"sin α = đối/huyền   cos α = kề/huyền\ntan α = đối/kề   cot α = kề/đối",tip:"Mẹo nhớ: “Sin đi học, Cos không hư, Tan đoàn kết, Cot kết đoàn” (sin = đối/huyền, cos = kề/huyền, tan = đối/kề, cot = kề/đối).",ex:["Ví dụ tam giác 3-4-5, α đối cạnh 3","sin α = 3/5, cos α = 4/5, tan α = 3/4"]}],
+Q:[["Hai cạnh góc vuông 6 và 8, cạnh huyền là:",["10","12","14","9"],0,"√(36 + 64) = 10."],["sin α bằng:",["kề/huyền","đối/huyền","đối/kề","kề/đối"],1,"sin = đối / huyền."],["Huyền được chia thành 4 và 9 bởi chân đường cao, AH =",["6","13","36","5"],0,"AH² = 4·9 = 36 ⇒ AH = 6."]]},
+{n:"Đường tròn",e:"⭕",hi:"Đường tròn có rất nhiều tính chất đẹp về dây, tiếp tuyến và góc.",
+L:[
+{t:"Đường kính và dây",say:"Đường kính là dây dài nhất. Đường kính vuông góc với một dây thì chia dây đó thành hai phần bằng nhau.",f:"OH ⊥ AB ⇒ HA = HB",tip:"Mẹo: vẽ bán kính tới hai đầu dây để tạo tam giác vuông rồi dùng Pytago.",ex:["Ví dụ","Dây AB = 8, khoảng cách từ tâm đến dây = 3 ⇒ R = √(4² + 3²) = 5"]},
+{t:"Tiếp tuyến",say:"Tiếp tuyến chỉ chạm đường tròn tại 1 điểm và vuông góc với bán kính tại điểm đó. Hai tiếp tuyến từ một điểm ngoài đường tròn có độ dài bằng nhau.",f:"OA ⊥ tiếp tuyến tại A      MA = MB",tip:"Mẹo: thấy tiếp tuyến thì nghĩ ngay góc vuông 90°.",ex:["Ví dụ","Từ M kẻ hai tiếp tuyến MA, MB thì MA = MB"]},
+{t:"Góc nội tiếp",say:"Góc có đỉnh nằm trên đường tròn. Số đo bằng nửa số đo cung bị chắn.",f:"góc nội tiếp = ½ số đo cung chắn",tip:"Mẹo: chắn nửa đường tròn (đường kính) thì luôn bằng 90°.",ex:["Ví dụ cung chắn 80°","Góc nội tiếp = 80° ÷ 2 = 40°"]},
+{t:"Chu vi, diện tích và tứ giác nội tiếp",say:"Chu vi và diện tích hình tròn dùng số π. Tứ giác nội tiếp có hai góc đối bù nhau.",f:"C = 2πR      S = πR²\nGóc đối: A + C = 180°",tip:"Mẹo: R là bán kính, bằng nửa đường kính.",ex:["Ví dụ R = 3","C = 2π·3 = 6π ; S = π·3² = 9π"]}],
+Q:[["Góc nội tiếp chắn nửa đường tròn bằng:",["45°","60°","90°","180°"],2,"Chắn nửa đường tròn thì bằng 90°."],["Chu vi đường tròn bán kính R:",["πR²","2πR","πR","4πR"],1,"C = 2πR."],["Tứ giác nội tiếp có một góc 70°, góc đối là:",["110°","70°","90°","20°"],0,"Hai góc đối bù nhau: 180° − 70° = 110°."]]}
+];
+const TK='(\\([^()]*\\)|[^\\s=+·×,;:()\\/]+)',FR=new RegExp(TK+'\\s*\\/\\s*'+TK,'g'),un=s=>s.replace(/^\((.*)\)$/,'$1');
+const fm=s=>s.split(/\n|\s{3,}/).map(r=>{let h=r.replace(FR,(m,a,b)=>'<span class="fr"><i>'+un(a)+'</i><i>'+un(b)+'</i></span>');h=h.replace(/_([A-Za-z]+)/g,'<sub>$1</sub>');h=h.replace(/(<[^>]+>)|([=⇒⇔±])/g,(m,t,o)=>t||'<b class="op">'+o+'</b>');return '<div class="fl">'+h+'</div>'}).join('');
+const L=(t,say,f,tip,ex)=>({t,say,f,tip,ex});
+D[0].L.push(L('Căn bậc ba','∛a là số mà lập phương lên ra a. Khác căn bậc hai, số âm cũng có căn bậc ba.','∛a = x ⇔ x³ = a','Mẹo: ∛8 = 2 vì 2³ = 8, còn ∛(−8) = −2.',['Ví dụ','∛27 = 3 ; ∛(−1) = −1']),L('Nhân và chia hai căn','Gộp hai căn thành một căn (với số không âm) để rút gọn nhanh.','√a · √b = √(ab)\n√a / √b = √(a/b)','Mẹo: làm ngược lại cũng được: √12 = √4 · √3 = 2√3.',['Ví dụ','√2 · √8 = √16 = 4']),L('So sánh hai căn','Số lớn hơn thì căn lớn hơn. Muốn so sánh thì đưa số vào trong căn.','0 ≤ a < b ⇒ √a < √b','Mẹo: so 3√2 với 4: 3√2 = √18 > √16 = 4.',['Ví dụ','√7 < √9 = 3']));
+D[0].Q.push(['∛(−8) bằng?',['2','−2','4','Không có'],1,'(−2)³ = −8.']);
+D[1].L.push(L('Giải bài toán bằng hệ','Đặt hai ẩn từ đề bài, lập hai phương trình rồi giải hệ.','Gọi ẩn ⇒ Lập hệ ⇒ Giải ⇒ Kết luận','Mẹo: nhớ đặt điều kiện cho ẩn và so lại với kết quả.',['Ví dụ','Tổng hai số là 10, hiệu là 4','x + y = 10 ; x − y = 4 ⇒ x = 7, y = 3']));
+D[2].L.push(L('Công thức thu gọn','Khi b là số chẵn (b = 2b′) thì dùng công thức này cho nhẹ số.','Δ′ = b′² − ac\nx = (−b′ ± √Δ′) / a','Mẹo: Δ′ = 0 thì nghiệm kép x = −b′ / a.',['Ví dụ x² − 4x + 3 = 0','b′ = −2, Δ′ = 4 − 3 = 1','x = (2 ± 1) / 1 ⇒ x = 3 hoặc x = 1']),L('Nhẩm nghiệm nhanh','Cộng ba hệ số lại, nếu ra 0 thì ngay lập tức có một nghiệm.','a + b + c = 0 ⇒ x₁ = 1 , x₂ = c / a\na − b + c = 0 ⇒ x₁ = −1 , x₂ = −c / a','Mẹo: thử a + b + c trước, mất 2 giây.',['Ví dụ x² − 5x + 4 = 0','1 − 5 + 4 = 0 ⇒ x = 1 và x = 4']),L('Biết tổng và tích','Tìm hai số khi biết tổng S và tích P: chúng là nghiệm của một phương trình bậc hai.','x² − Sx + P = 0 \nx₁² + x₂² = S² − 2P','Mẹo: điều kiện có hai số là S² − 4P ≥ 0.',['Ví dụ tổng 7, tích 12','x² − 7x + 12 = 0 ⇒ hai số là 3 và 4']));
+D[2].Q.push(['Hai số có tổng 7 và tích 12 là nghiệm của:',['x² − 7x + 12 = 0','x² + 7x + 12 = 0','x² − 12x + 7 = 0','x² − 7x − 12 = 0'],0,'x² − Sx + P = 0 với S = 7, P = 12.']);
+D[3].L.push(L('Nghịch đảo đường cao','Một hệ thức nữa liên hệ đường cao với hai cạnh góc vuông.','1 / AH² = 1 / AB² + 1 / AC²','Mẹo: nghịch đảo của bình phương cộng lại.',['Ví dụ AB = 3, AC = 4','1/AH² = 1/9 + 1/16 = 25/144 ⇒ AH = 12/5']),L('Hệ thức cơ bản','Các công thức nối sin, cos, tan, cot với nhau.','sin²α + cos²α = 1\ntan α = sin α / cos α\ntan α · cot α = 1','Mẹo: sin² + cos² = 1 giống Pytago trong tam giác có huyền bằng 1.',['Ví dụ','sin α = 3/5 ⇒ cos² α = 1 − 9/25 = 16/25']),L('Góc phụ nhau','Hai góc có tổng 90° thì sin góc này bằng cos góc kia.','sin α = cos(90° − α)\ntan α = cot(90° − α)','Mẹo: sin 30° = cos 60° = 1/2.',['Ví dụ','sin 40° = cos 50°']),L('Cạnh và góc','Biết một cạnh và một góc nhọn thì tính được các cạnh còn lại.','b = a · sin B = a · cos C\nb = c · tan B = c · cot C','Mẹo: a là huyền, b đối góc B, c kề góc B.',['Ví dụ huyền 10, góc B = 30°','b = 10 · sin 30° = 5']));
+D[3].Q.push(['sin²α + cos²α bằng:',['0','1','2','tan α'],1,'Đây là hệ thức cơ bản.']);
+D[4].L.push(L('Độ dài cung','Cung n° của đường tròn bán kính R có độ dài tỉ lệ với n.','l = πRn / 180','Mẹo: n = 360 thì l = 2πR, chính là chu vi.',['Ví dụ R = 3, n = 60','l = π·3·60 / 180 = π']),L('Diện tích hình quạt','Hình quạt là một phần của hình tròn, ứng với cung n°.','S = πR²n / 360\nS = l · R / 2','Mẹo: n = 360 thì S = πR².',['Ví dụ R = 6, n = 90','S = π·36·90 / 360 = 9π']),L('Đường thẳng và đường tròn','Gọi d là khoảng cách từ tâm đến đường thẳng, so với bán kính R.','d > R : không cắt\nd = R : tiếp xúc\nd < R : cắt tại 2 điểm','Mẹo: d = R thì đường thẳng là tiếp tuyến.',['Ví dụ R = 5, d = 3','d < R nên cắt tại 2 điểm']),L('Hai đường tròn','Gọi d là khoảng cách hai tâm, so với R + r và R − r.','d > R + r : ngoài nhau\nd = R + r : tiếp xúc ngoài\nR − r < d < R + r : cắt nhau\nd = R − r : tiếp xúc trong\nd < R − r : đựng nhau','Mẹo: vẽ hai vòng tròn rồi đẩy lại gần nhau để nhớ.',['Ví dụ R = 5, r = 3, d = 8','d = R + r nên tiếp xúc ngoài']));
+D[4].Q.push(['Hình tròn bán kính 6 có diện tích:',['12π','36π','6π','72π'],1,'S = πR² = 36π.']);
+D.push({n:'Hàm số bậc nhất',e:'📈',hi:'y = ax + b vẽ ra một đường thẳng. a là độ dốc, b là chỗ đường thẳng cắt trục tung.',L:[L('Hàm số bậc nhất','Hàm số dạng y = ax + b với a khác 0. Dấu của a cho biết đường thẳng đi lên hay đi xuống.','y = ax + b (a ≠ 0)','Mẹo: a > 0 đi lên (đồng biến), a < 0 đi xuống (nghịch biến).',['Ví dụ','y = 2x + 1 có a = 2 > 0 nên đi lên']),L('Vẽ đồ thị','Chỉ cần 2 điểm là vẽ được đường thẳng, dễ nhất là hai điểm cắt trục.','Cắt Oy tại (0 ; b)\nCắt Ox tại (−b / a ; 0)','Mẹo: cho x = 0 để tìm y, cho y = 0 để tìm x.',['Ví dụ y = 2x − 4','x = 0 ⇒ y = −4','y = 0 ⇒ x = 2']),L('Hai đường thẳng','So sánh a và b của y = ax + b và y = a′x + b′.','a ≠ a′ ⇒ cắt nhau\na = a′, b ≠ b′ ⇒ song song\na = a′, b = b′ ⇒ trùng nhau\na · a′ = −1 ⇒ vuông góc','Mẹo: song song thì cùng độ dốc nhưng khác chỗ cắt trục tung.',['Ví dụ','y = 2x + 1 và y = 2x − 3 cùng a = 2, khác b ⇒ song song'])],Q:[['Đường thẳng y = 3x − 6 cắt trục hoành tại:',['(2 ; 0)','(−2 ; 0)','(0 ; −6)','(6 ; 0)'],0,'y = 0 ⇒ 3x = 6 ⇒ x = 2.'],['Đường thẳng nào song song với y = 2x + 5?',['y = −2x + 5','y = 2x − 1','y = x + 5','y = 5x + 2'],1,'Cùng a = 2 và khác b.'],['y = −x + 4 là hàm số:',['đồng biến','nghịch biến','không đổi','không xác định'],1,'a = −1 < 0.']]});
+D.push({n:'Hàm số y = ax²',e:'🥣',hi:'Đồ thị y = ax² là parabola, giống cái bát hoặc cái ô.',L:[L('Hàm số y = ax²','Đồ thị là parabola có đỉnh O, đối xứng qua trục Oy.','y = ax² (a ≠ 0)','Mẹo: a > 0 mở lên (cái bát), a < 0 mở xuống (cái ô).',['Ví dụ y = 2x²','x = 1 ⇒ y = 2','x = −1 ⇒ y = 2 (đối xứng)']),L('Tăng hay giảm?','Xem a dương hay âm để biết hàm số biến thiên quanh x = 0.','a > 0: x < 0 nghịch biến, x > 0 đồng biến\na < 0: x < 0 đồng biến, x > 0 nghịch biến','Mẹo: a > 0 thì y nhỏ nhất bằng 0, a < 0 thì y lớn nhất bằng 0.',['Ví dụ','y = −x² có giá trị lớn nhất là 0 tại x = 0']),L('Parabola cắt đường thẳng','Cho hoành độ giao điểm bằng nhau rồi giải phương trình bậc hai.','ax² = mx + n\nax² − mx − n = 0','Mẹo: Δ > 0 cắt 2 điểm, Δ = 0 tiếp xúc, Δ < 0 không cắt.',['Ví dụ x² = x + 2','x² − x − 2 = 0 ⇒ x = 2 hoặc x = −1','Giao điểm (2 ; 4) và (−1 ; 1)'])],Q:[['Điểm nào thuộc đồ thị y = 3x²?',['(1 ; 3)','(2 ; 6)','(1 ; 9)','(−1 ; −3)'],0,'x = 1 ⇒ y = 3.'],['y = −2x² có đồ thị mở:',['lên','xuống','sang trái','sang phải'],1,'a < 0 nên mở xuống.'],['Parabola y = x² và đường thẳng y = 4 cắt nhau tại mấy điểm?',['0','1','2','3'],2,'x² = 4 ⇒ x = 2 hoặc x = −2.']]});
+D.push({n:'Trụ, nón, cầu',e:'🥫',hi:'Ba hình khối quen thuộc. Chỉ cần nhớ công thức diện tích và thể tích.',L:[L('Hình trụ','Có hai đáy tròn bán kính R và chiều cao h.','S_xq = 2πRh\nS_tp = 2πRh + 2πR²\nV = πR²h','Mẹo: trải mặt xung quanh ra là hình chữ nhật dài 2πR, rộng h.',['Ví dụ R = 2, h = 5','V = π·4·5 = 20π']),L('Hình nón','Có đáy tròn bán kính R, chiều cao h và đường sinh l.','S_xq = πRl\nS_tp = πRl + πR²\nV = πR²h / 3\nl² = R² + h²','Mẹo: thể tích nón bằng một phần ba thể tích trụ cùng đáy và chiều cao.',['Ví dụ R = 3, h = 4','l = 5 ; S_xq = π·3·5 = 15π']),L('Hình cầu','Mọi điểm trên mặt cầu cách tâm một khoảng R.','S = 4πR²\nV = 4πR³ / 3','Mẹo: diện tích mặt cầu gấp 4 lần diện tích hình tròn lớn.',['Ví dụ R = 3','S = 36π ; V = 36π'])],Q:[['Thể tích hình cầu bán kính R:',['4πR²','4πR³/3','πR³','2πR³'],1,'V = 4πR³/3.'],['Hình trụ R = 2, h = 5, thể tích:',['10π','20π','40π','50π'],1,'V = π·4·5 = 20π.'],['Hình nón có l² bằng:',['R² + h²','R² − h²','R + h','2Rh'],0,'Pytago trong tam giác vuông.']]});
+const P='var(--pr)',B='#4aa3ff',G='var(--ok)';
+const tx=(x,y,t,s,c)=>'<text x="'+x+'" y="'+y+'" text-anchor="middle" font-size="'+(s||12)+'" font-weight="700" fill="'+(c||'var(--tx)')+'">'+t+'</text>';
+const tp=(x,y,t,d,s,c)=>tx(x,y,t,s,c).replace('<text','<text class="pp" style="animation-delay:'+d+'s"');
+const st=(a,y,s)=>a.map((t,i)=>tx(120,y,t,s||20).replace('<text','<text class="cy" style="animation-delay:'+i*1.6+'s"')).join('');
+const ln=(a,b,c,d,col,w,dl)=>'<line class="dr" pathLength="100" x1="'+a+'" y1="'+b+'" x2="'+c+'" y2="'+d+'" stroke="'+(col||P)+'" stroke-width="'+(w||3)+'" stroke-linecap="round" style="animation-delay:'+(dl||0)+'s"/>';
+const ci=(x,y,r,col)=>'<circle class="dr" pathLength="100" cx="'+x+'" cy="'+y+'" r="'+r+'" fill="none" stroke="'+col+'" stroke-width="3"/>';
+const dot=(x,y,col)=>'<circle class="pu" cx="'+x+'" cy="'+y+'" r="6" fill="'+col+'"/>';
+const ART=[
+[
+'<rect class="pu" x="40" y="22" width="64" height="64" rx="6" fill="var(--pr2)" stroke="'+P+'" stroke-width="3"/>'+tx(72,60,'25',20)+tx(72,16,'5',13)+tx(30,58,'5',13)+tx(175,48,'5² = 25',17)+tx(175,72,'√25 = 5',17,P),
+'<line x1="20" y1="70" x2="220" y2="70" stroke="var(--mu)" stroke-width="2"/>'+[60,120,180].map((x,i)=>'<line x1="'+x+'" y1="64" x2="'+x+'" y2="76" stroke="var(--mu)" stroke-width="2"/>'+tx(x,92,['−3','0','3'][i],13)).join('')+ln(120,70,60,70,P,5)+dot(60,70,P)+tx(120,28,'√((−3)²) = 3',18)+tx(120,46,'cách 0 đúng 3 đơn vị',11,'var(--mu)'),
+st(['√50','= √(25 · 2)','= 5√2'],64,26),
+st(['1/√3','× √3 / √3','= √3 / 3'],64,26)],
+[
+ln(30,90,200,20,P)+ln(30,30,200,95,B,3,.4)+dot(106,59,G)+tx(106,44,'nghiệm (x; y)',12),
+st(['y = 5 − x','2x − (5 − x) = 1','3x = 6 ⇒ x = 2','y = 3'],62,22),
+st(['x + y = 5','x − y = 1','cộng: 2x = 6','x = 3 và y = 2'],62,22),
+ln(15,25,65,70,P)+ln(15,70,65,25,B,3,.3)+ln(95,60,145,25,P)+ln(95,80,145,45,B,3,.3)+ln(175,70,225,25,P,4)+ln(175,70,225,25,B,2,.3)+tx(40,100,'1 nghiệm',11)+tx(120,100,'vô nghiệm',11)+tx(200,100,'vô số nghiệm',11)],
+[
+st(['ax² + bx + c = 0','x² − 5x + 6 = 0','a = 1 · b = −5 · c = 6'],62,20),
+'<line x1="20" y1="55" x2="220" y2="55" stroke="var(--mu)" stroke-width="2"/><g class="pa"><path d="M60 40 Q120 100 180 40" fill="none" stroke="'+P+'" stroke-width="3.5" stroke-linecap="round"/></g>'+st(['Δ > 0: 2 nghiệm 😄','Δ = 0: nghiệm kép 😐','Δ < 0: vô nghiệm 😢'],102,15),
+st(['x = (−b ± √Δ) / 2a','x = (5 ± 1) / 2','x₁ = 3   x₂ = 2'],62,22),
+st(['x₁ + x₂ = −b / a','3 + 2 = 5 ✓','x₁ · x₂ = c / a','3 · 2 = 6 ✓'],62,22)],
+[
+ln(30,90,30,15,B)+ln(30,90,130,90,G,3,.3)+ln(30,15,130,90,P,3,.6)+'<path d="M30 80h10v10" fill="none" stroke="var(--mu)" stroke-width="2"/>'+tx(17,56,'3',14,B)+tx(80,106,'4',14,G)+tx(92,44,'5',14,P)+tp(190,40,'3² + 4²',0,17)+tp(190,62,'= 9 + 16',.8,17)+tp(190,86,'= 5²',1.6,20,P),
+ln(30,95,150,95,G)+ln(30,95,70,38,B,3,.3)+ln(70,38,150,95,B,3,.6)+ln(70,38,70,95,P,3,.9)+tx(50,107,'BH',11)+tx(110,107,'CH',11)+tx(86,70,'AH',11,P)+tx(70,30,'A',12)+tx(22,100,'B',12)+tx(158,100,'C',12)+tp(200,50,'AH²',0,17)+tp(200,74,'= BH·CH',.8,15,P),
+ln(30,90,150,90,G)+ln(150,90,150,25,B,3,.3)+ln(30,90,150,25,P,3,.6)+'<path class="pu" d="M58 90A28 28 0 0 0 54.6 76.7" fill="none" stroke="'+G+'" stroke-width="3"/>'+tx(68,82,'α',13)+tp(182,60,'đối',0,14,B)+tp(90,106,'kề',.8,14,G)+tp(80,48,'huyền',1.6,14,P)],
+[
+ci(80,55,45,P)+ln(40,75,120,75,B,3,.3)+ln(80,55,80,75,G,3,.6)+tx(72,52,'O',11)+tx(30,80,'A',12)+tx(130,80,'B',12)+tx(80,90,'H',11)+tp(190,45,'OH ⊥ AB',0,16)+tp(190,70,'HA = HB',.8,16,P),
+ci(90,55,35,P)+ln(200,55,101,22,B,3,.3)+ln(200,55,101,88,B,3,.6)+ln(90,55,101,22,G,3,.9)+tx(212,59,'M',13)+tx(104,15,'A',12)+tx(104,102,'B',12)+tx(82,60,'O',11)+tp(160,106,'MA = MB',0,14,P),
+ci(120,55,45,P)+ln(75,55,165,55,B,3,.3)+ln(75,55,120,10,G,3,.6)+ln(165,55,120,10,G,3,.9)+'<path d="M114.3 15.7L120 21.4L125.7 15.7" fill="none" stroke="var(--mu)" stroke-width="2"/>'+tp(120,44,'90°',0,15,P)+tx(120,108,'½ · 180° = 90°',12,'var(--mu)'),
+ci(80,55,40,P)+'<g class="rt" style="transform-origin:80px 55px"><line x1="80" y1="55" x2="120" y2="55" stroke="'+B+'" stroke-width="3"/><circle cx="120" cy="55" r="5" fill="'+B+'"/></g>'+tp(185,45,'C = 2πR',0,17)+tp(185,72,'S = πR²',.8,17,P)]
+];
+const mu='var(--mu)',pa=(d,c,w)=>'<path class="dr" pathLength="100" d="'+d+'" fill="none" stroke="'+c+'" stroke-width="'+(w||3)+'" stroke-linecap="round"/>',el=(cx,cy,rx,ry,c)=>'<ellipse class="dr" pathLength="100" cx="'+cx+'" cy="'+cy+'" rx="'+rx+'" ry="'+ry+'" fill="none" stroke="'+c+'" stroke-width="3"/>',tri=ln(30,90,150,90,G)+ln(150,90,150,25,B,3,.3)+ln(30,90,150,25,P,3,.6);
+ART[0].push(st(['2³ = 8','∛8 = 2','∛(−8) = −2'],62,26),st(['√2 · √8','= √(2 · 8)','= √16 = 4'],62,26),st(['3√2 so với 4','3√2 = √18','√18 > √16','⇒ 3√2 > 4'],62,24));
+ART[1].push(st(['x + y = 10','x − y = 4','2x = 14 ⇒ x = 7','y = 3'],62,22));
+ART[2].push(st(['x² − 4x + 3 = 0','b′ = −2 ; Δ′ = 4 − 3 = 1','x = 2 ± 1','x = 3 ; x = 1'],62,19),st(['x² − 5x + 4 = 0','1 − 5 + 4 = 0 ✓','x₁ = 1','x₂ = c/a = 4'],62,21),tp(60,52,'3',0,36,B)+tp(120,50,'+',.4,28)+tp(180,52,'4',.8,36,G)+tp(120,92,'S = 7 , P = 12',1.6,17,P));
+ART[3].push(ln(30,95,150,95,G)+ln(30,95,70,38,B,3,.3)+ln(70,38,150,95,B,3,.6)+ln(70,38,70,95,P,3,.9)+tp(200,50,'1/AH²',0,16)+tp(200,70,'= 1/AB²',.8,14,P)+tp(200,90,'+ 1/AC²',1.6,14,P),
+tri+tx(90,106,'cos α',12,G)+tx(172,60,'sin α',12,B)+tx(80,48,'1',14,P)+tp(120,14,'sin²α + cos²α = 1',0,13,P),
+tri+tx(62,84,'α',13,G)+tx(138,40,'90°−α',11,B)+tp(205,60,'sin α',0,12,G)+tp(205,78,'= cos(90°−α)',.8,10,P),
+tri+tx(90,106,'c',12,G)+tx(164,60,'b',12,B)+tx(80,48,'a',13,P)+tp(205,50,'b = a·sin B',0,12)+tp(205,70,'= 10 · ½',.8,12)+tp(205,90,'= 5',1.6,16,P));
+ART[4].push(ci(80,55,40,mu)+ln(80,55,120,55,mu,2)+ln(80,55,100,20.4,mu,2)+pa('M120 55A40 40 0 0 0 100 20.4',B,6)+tx(98,50,'n°',11)+tp(185,50,'l = πRn/180',0,13)+tp(185,72,'n=60 ⇒ l=π',.8,13,P),
+ci(80,55,40,mu)+'<path class="pu" d="M80 55L120 55A40 40 0 0 0 100 20.4Z" fill="'+B+'" fill-opacity=".35" stroke="'+P+'" stroke-width="3"/>'+tp(185,50,'S = πR²n/360',0,12)+tp(185,72,'= l·R/2',.8,14,P),
+ci(40,45,20,P)+ci(120,45,20,P)+ci(200,45,20,P)+ln(15,85,65,85,B)+ln(95,65,145,65,B,3,.3)+ln(175,50,225,50,B,3,.6)+tx(40,102,'không cắt',10)+tx(120,102,'tiếp xúc',10)+tx(200,102,'cắt 2 điểm',10),
+ci(22,55,14,P)+ci(58,55,14,B)+ci(106,55,14,P)+ci(134,55,14,B)+ci(188,55,14,P)+ci(212,55,14,B)+tx(40,92,'ngoài nhau',10)+tx(120,92,'tiếp xúc',10)+tx(200,92,'cắt nhau',10));
+ART[5]=[ln(20,90,220,90,mu,2)+ln(40,100,40,10,mu,2)+ln(50,85,200,25,P,4)+ln(50,25,200,85,B,4,.5)+tx(185,14,'a > 0 ↗',12,P)+tx(185,104,'a < 0 ↘',12,B),
+ln(20,60,220,60,mu,2)+ln(60,105,60,5,mu,2)+ln(50,100,160,12,P,3)+dot(60,92,P)+dot(100,60,B)+tp(195,35,'y = 0 ⇒ x = 2',0,11,B)+tp(195,95,'x = 0 ⇒ y = −4',.8,11,P),
+ln(10,70,50,30)+ln(10,35,50,60,B,3,.3)+ln(70,70,110,30)+ln(70,85,110,45,B,3,.3)+ln(130,70,170,30,P,4)+ln(130,70,170,30,B,2,.3)+ln(192,75,228,35)+ln(192,35,228,75,B,3,.3)+tx(30,100,'cắt',10)+tx(90,100,'song song',10)+tx(150,100,'trùng',10)+tx(210,100,'vuông góc',10)];
+ART[6]=[ln(20,85,220,85,mu,2)+ln(120,100,120,5,mu,2)+pa('M80 20Q120 150 160 20',P,4)+dot(100,69,B)+dot(140,69,B)+tx(120,14,'đối xứng qua Oy',11,mu),
+pa('M20 20Q60 110 100 20',P,4)+pa('M140 90Q180 -10 220 90',B,4)+dot(60,65,P)+dot(180,40,B)+tx(60,100,'a > 0',12,P)+tx(180,104,'a < 0',12,B),
+pa('M70 10Q120 170 170 10',P,4)+ln(60,98,180,2,B,3,.4)+dot(95,70,G)+dot(170,10,G)+tp(205,50,'(−1 ; 1)',0,11,G)+tp(205,66,'(2 ; 4)',.8,11,G)];
+ART[7]=[el(70,25,35,10,P)+ln(35,25,35,85,P)+ln(105,25,105,85,P)+pa('M35 85A35 10 0 0 0 105 85',P)+tx(120,60,'h',13,B)+tx(70,22,'R',11,B)+tp(190,40,'V = πR²h',0,13)+tp(190,66,'S = 2πRh',.8,13,P),
+ln(70,12,35,85,P)+ln(70,12,105,85,P)+pa('M35 85A35 10 0 0 0 105 85',P)+ln(70,12,70,85,B,2)+tx(98,45,'l',13,P)+tx(62,50,'h',13,B)+tp(190,40,'V = πR²h/3',0,12)+tp(190,66,'S = πRl',.8,13,P),
+ci(70,55,40,P)+el(70,55,40,11,B)+ln(70,55,110,55,G,2)+tx(92,50,'R',12,G)+dot(70,55,P)+tp(190,40,'S = 4πR²',0,14)+tp(190,66,'V = 4πR³/3',.8,13,P)];
+const svg=(i,k)=>{const f=ART[i]&&ART[i][k];return f?'<svg viewBox="0 0 240 110" role="img" aria-label="Hình minh họa động">'+f+'</svg>':''};
+const $=id=>document.getElementById(id);
+const nav=$("nav"),main=$("main");let stars=0;
+function show(i){[...nav.children].forEach((b,k)=>b.classList.toggle("on",k===i));
+const d=D[i];
+let h='<div class="intro"><div class="m">🐰</div><div>'+d.hi+'</div></div>';
+d.L.forEach((l,k)=>{
+h+='<div class="card"><span class="tag">Bài '+(k+1)+'</span><h2>'+l.t+'</h2><p class="say">'+l.say+'</p><div class="f">'+fm(l.f)+'</div><div class="ill">'+svg(i,k)+'</div><div class="tip">💡 '+l.tip+'</div><div class="ex"><b>📝 '+l.ex[0]+'</b>'+l.ex.slice(1).join('<br>')+(l.ex.length>1?'':'')+'</div></div>'});
+h+='<div class="card"><h2>🎯 Thử sức nào!</h2><p class="say">Đúng mỗi câu được 1 ⭐</p><div id="qs"></div></div>';
+main.innerHTML=h;
+const qs=$("qs");
+d.Q.forEach((q,k)=>{const el=document.createElement("div");el.className="q";
+el.innerHTML='<b>Câu '+(k+1)+'.</b> '+q[0];
+const fb=document.createElement("div");fb.className="fb";
+q[1].forEach((t,j)=>{const b=document.createElement("button");b.className="o";b.textContent=String.fromCharCode(65+j)+'. '+t;
+b.onclick=()=>{if(el.dataset.d)return;el.dataset.d=1;const ok=j===q[2];
+b.classList.add(ok?"ok":"no");if(!ok)el.querySelectorAll(".o")[q[2]].classList.add("ok");
+if(ok){stars++;$("stars").textContent=stars}
+fb.textContent=(ok?"🎉 Giỏi quá! ":"💪 Không sao, thử nhớ lại nha. ")+q[3]};
+el.appendChild(b)});
+el.appendChild(fb);qs.appendChild(el)});
+window.scrollTo(0,0)}
+D.forEach((d,i)=>{const b=document.createElement("button");b.className="chip";b.textContent=d.e+" "+d.n;b.onclick=()=>show(i);nav.appendChild(b)});
+show(0);
+function tab(w){$("learn").classList.toggle("hide",w!==1);$("tool").classList.toggle("hide",w!==2);$("t1").classList.toggle("on",w===1);$("t2").classList.toggle("on",w===2);window.scrollTo(0,0)}
+$("t1").onclick=()=>tab(1);$("t2").onclick=()=>tab(2);
+const f=n=>Math.round(n*1e4)/1e4;
+$("go").onclick=()=>{
+const a=+$("a").value,b=+$("b").value,c=+$("c").value,r=$("res");
+if(!a){r.textContent="a phải khác 0 nha 🐰";return}
+const d=b*b-4*a*c;
+let t="Bước 1: a = "+a+", b = "+b+", c = "+c+"\nBước 2: Δ = b² − 4ac = "+f(d)+"\n";
+if(d>0){const s=Math.sqrt(d);t+="Bước 3: Δ > 0 nên có 2 nghiệm\nx₁ = "+f((-b+s)/(2*a))+"\nx₂ = "+f((-b-s)/(2*a))}
+else if(d===0)t+="Bước 3: Δ = 0 nên có nghiệm kép\nx = "+f(-b/(2*a));
+else t+="Bước 3: Δ < 0 nên phương trình vô nghiệm";
+t+="\n\nKiểm tra bằng Vi-ét:\nx₁ + x₂ = "+f(-b/a)+"\nx₁ · x₂ = "+f(c/a);
+r.textContent=t};
+$("go").click();
+$("tg").onclick=()=>{const r=document.documentElement,dk=getComputedStyle(r).colorScheme==="dark";r.setAttribute("data-theme",dk?"light":"dark");$("tg").textContent=dk?"🌙":"☀️"};
+</script>
+</body>
+</html>
